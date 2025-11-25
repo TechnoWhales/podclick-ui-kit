@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "verbatimModuleSyntax": false // Отключаем для ESLint
+  },
+  "include": [
+    "src/**/*",
+    ".storybook/**/*",
+    "*.config.js",
+    "*.config.mjs",
+    "*.config.ts",
+    "eslint.config.mjs"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
