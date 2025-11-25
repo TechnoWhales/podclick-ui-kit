@@ -41,8 +41,6 @@ export type TypographyProps<T extends ElementType = 'p'> = {
   children: ReactNode
   /** Вариант типографики */
   variant?: TypographyVariant
-  /** Дополнительные CSS классы */
-  className?: string
 } & ComponentPropsWithoutRef<T>
 
 /* ---------------- COMPONENT ---------------- */

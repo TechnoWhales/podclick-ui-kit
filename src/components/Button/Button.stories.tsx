@@ -45,8 +45,6 @@ const meta = {
     fullwidth: { control: 'boolean' },
     disabled: { control: 'boolean' },
     as: { table: { disable: true } },
-    className: { table: { disable: true } },
-    // ref: { table: { disable: true } },
   }
 } satisfies Meta<typeof Button>
 

@@ -19,7 +19,6 @@ const meta = {
     },
   ],
   argTypes: {
-    className: { table: { disable: true } },
     as: {
       control: 'select',
       options: ['p', 'h1', 'h2', 'h3', 'span', 'div', 'a', 'i', 'strong'],

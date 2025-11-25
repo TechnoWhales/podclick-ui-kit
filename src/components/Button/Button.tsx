@@ -36,8 +36,6 @@ export type ButtonOwnProps<T extends ElementType = 'button'> = {
   variant?: 'icon' | 'link' | 'outlined' | 'primary' | 'secondary'
   /** Занимает всю доступную ширину */
   fullwidth?: boolean
-  /** Дополнительные CSS классы */
-  className?: string
   /** Неактивное состояние */
   disabled?: boolean
   /** Обработчик клика */
