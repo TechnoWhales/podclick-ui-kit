@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Icon } from '@/components/Icon';
-import type { IconsId } from '@/components/Icon/types';
+import { Icon } from '@/components/ui/Icon';
+import type { IconsId } from '@/components/ui/Icon/types';
 
 const allIcons: IconsId[] = [
   'arrowBackOutline',

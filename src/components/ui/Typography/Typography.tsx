@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
 
 import clsx from 'clsx'
 
-import s from '@/components/Typography/Typography.module.css'
+import s from '@/components/ui/Typography/Typography.module.css'
 
 /* ---------------- TYPES ---------------- */
 

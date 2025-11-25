@@ -1,4 +1,4 @@
-import type { IconsId } from '@/components/Icon/types';
+import type { IconsId } from '@/components/ui/Icon/types';
 import spriteUrl from '@/assets/icons-sprite.svg';
 
 /**

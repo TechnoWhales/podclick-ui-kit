@@ -1,8 +1,8 @@
 import type { Meta, StoryObj, StoryFn, Args, StoryContext } from '@storybook/react-vite'
 import { action } from 'storybook/actions';
 
-import { Button } from '@/components/Button/Button'
-import { Icon } from '@/components/Icon/Icon'
+import { Button } from '@/components/ui/Button/Button'
+import { Icon } from '@/components/ui/Icon/Icon'
 
 const ContainerDecorator = (Story: StoryFn<Args>, context: StoryContext<Args>) => {
   const isFullwidth = context.args?.fullwidth;

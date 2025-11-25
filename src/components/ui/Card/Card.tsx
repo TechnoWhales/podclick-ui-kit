@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 import clsx from 'clsx'
 
-import s from '@/components/Card/Card.module.css'
+import s from '@/components/ui/Card/Card.module.css'
 
 /**
  * Пропсы компонента Card

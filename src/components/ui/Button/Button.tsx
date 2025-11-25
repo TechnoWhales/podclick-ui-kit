@@ -5,8 +5,8 @@ import type {
 } from 'react'
 
 import clsx from 'clsx'
-import { Icon, type IconsId } from '@/components/Icon/'
-import s from '@/components/Button/Button.module.css'
+import { Icon, type IconsId } from '@/components/ui/Icon'
+import s from '@/components/ui/Button/Button.module.css'
 
 /**
  * Кнопка с поддержкой различных вариантов оформления
