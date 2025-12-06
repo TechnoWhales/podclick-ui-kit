@@ -117,7 +117,7 @@ const meta: Meta<IconStoryArgs> = {
     iconId: 'home',
     width: '24',
     height: '24',
-    color: '#000000',
+    color: '#fff',
   },
 }
 
