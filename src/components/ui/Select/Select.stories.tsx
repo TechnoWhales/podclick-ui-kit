@@ -8,7 +8,7 @@ import { Icon } from '@/components/ui/Icon/Icon'
 const meta: Meta<typeof Select> = {
   title: 'Components/Select',
   component: Select,
-   parameters: {
+    parameters: {
     docs: {
       description: {
         component: 'Компонент выпадающего списка на основе Radix UI. Поддерживает различные состояния, размеры и кастомизацию.'
@@ -22,6 +22,11 @@ const meta: Meta<typeof Select> = {
       description: 'Размер компонента',
       table: {
         defaultValue: { summary: 'm' }
+      }
+    },
+    placeholder: {
+      table: {
+        defaultValue: { summary: 'Select...' }
       }
     },
     disabled: {

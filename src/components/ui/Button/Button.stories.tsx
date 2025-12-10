@@ -42,8 +42,21 @@ const meta = {
     onClick: action('Button clicked!'),
   },
   argTypes: {
+    variant: { 
+      table: {
+        defaultValue: { summary: 'primary' }
+      }
+    },
+        iconId: {
+      if: { arg: 'variant', eq: 'icon' }
+    },
     fullwidth: { control: 'boolean' },
-    disabled: { control: 'boolean' },
+    disabled: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: 'false' }
+      }
+    },
     as: { table: { disable: true } },
   }
 } satisfies Meta<typeof Button>
