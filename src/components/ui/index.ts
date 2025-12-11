@@ -1,5 +1,7 @@
 export * from '@/components/ui/Button'
 export * from '@/components/ui/Card'
 export * from '@/components/ui/Icon'
+export * from '@/components/ui/Select'
+export * from '@/components/ui/Tabs'
 export * from '@/components/ui/TextField'
 export * from '@/components/ui/Typography'

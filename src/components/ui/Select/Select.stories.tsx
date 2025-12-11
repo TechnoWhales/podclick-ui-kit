@@ -1,9 +1,47 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
-import { Select } from '@/components/ui/Select/Select'
+import { Select } from '@/components/ui/Select'
 import { Typography } from '@/components/ui/Typography/Typography';
 import { Icon } from '@/components/ui/Icon/Icon'
+
+const labelStyleForCustomOptions = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '12px',
+};
+
+const options = [
+  { value: 'option1', label: 'Вариант 1' },
+  { value: 'option2', label: 'Вариант 2' },
+  { value: 'option3', label: 'Вариант 3' },
+]
+
+const optionsForLongList = Array.from({ length: 20 }, (_, i) => ({
+  value: `item-${i + 1}`,
+  label: `Элемент списка ${i + 1}`,
+}))
+
+const optionsCustomList = [
+  {
+    value: 'en',
+    label: (
+      <span style={labelStyleForCustomOptions}>
+        <Icon iconId={"flagUnitedKingdom"} />
+        English
+      </span>
+    ),
+  },
+  {
+    value: 'ru',
+    label: (
+      <span style={labelStyleForCustomOptions}>
+        <Icon iconId={"flagRussia"} />
+        Русский
+      </span>
+    ),
+  },
+];
 
 const meta: Meta<typeof Select> = {
   title: 'Components/Select',
@@ -28,6 +66,14 @@ const meta: Meta<typeof Select> = {
       table: {
         defaultValue: { summary: 'Select...' }
       }
+    },
+    value: {
+      control: 'select',
+      options: ['option1', 'option2', 'option3', ''],
+      description: 'Выбранная опция',
+    },
+    options: {
+      table: { disable: true },
     },
     disabled: {
       control: 'boolean',
@@ -62,11 +108,7 @@ const meta: Meta<typeof Select> = {
   args: {
     value: '',
     placeholder: 'Выберите вариант',
-    options: [
-      { value: 'option1', label: 'Вариант 1' },
-      { value: 'option2', label: 'Вариант 2' },
-      { value: 'option3', label: 'Вариант 3' },
-    ],
+    options: options,
     size: 'm',
     disabled: false,
     required: false,
@@ -214,11 +256,13 @@ export const WithPreselectedValue: Story = {
  * Демонстрирует скроллинг внутри выпадающего списка.
  */
 export const LongList: Story = {
+  argTypes: {
+    value: {
+      options: optionsForLongList.map(opt => opt.value),
+    },
+  },
   args: {
-    options: Array.from({ length: 20 }, (_, i) => ({
-      value: `item-${i}`,
-      label: `Элемент списка ${i + 1}`,
-    })),
+    options: optionsForLongList,
     maxHeight: '300px',
     label: 'Длинный список',
   },
@@ -235,33 +279,6 @@ export const LongList: Story = {
  * Сложные опции с иконками и кастомной вёрсткой.
  * Демонстрирует возможность использования React-элементов в качестве label.
  */
-const labelStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '12px',
-};
-
-const customOptions = [
-  {
-    value: 'en',
-    label: (
-      <span style={labelStyle}>
-        <Icon iconId={"flagUnitedKingdom"} />
-        English
-      </span>
-    ),
-  },
-  {
-    value: 'ru',
-    label: (
-      <span style={labelStyle}>
-        <Icon iconId={"flagRussia"} />
-        Русский
-      </span>
-    ),
-  },
-];
-
 export const WithCustomOptions: StoryObj<typeof Select> = {
   render: (args) => {
     const [value, setValue] = useState('');
@@ -272,7 +289,7 @@ export const WithCustomOptions: StoryObj<typeof Select> = {
           {...args}
           value={value}
           onValueChange={setValue}
-          options={customOptions} // ★ НЕ из args!
+          options={optionsCustomList} // ★ НЕ из args!
         />
       </div>
     );
