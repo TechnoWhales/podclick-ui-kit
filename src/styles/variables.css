@@ -31,6 +31,8 @@
   --color-accent-500: #397df6;
   --color-accent-700: #2f68cc;
   --color-accent-900: #234e99;
+  --color-accent-100-with-op-150: rgb(115 165 255 / 15%);
+  --color-accent-900-with-op-150: rgb(35 78 153 / 15%);
 
   --color-success-100: #80ffbf;
   --color-success-300: #22e684;

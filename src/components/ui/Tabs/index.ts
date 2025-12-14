@@ -1,0 +1,1 @@
+export { Tabs, TabContent, type TabType } from '@/components/ui/Tabs/Tabs';
