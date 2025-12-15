@@ -126,7 +126,7 @@ export const TextField = (props: TextFieldProps) => {
     <Typography
       variant={'regular_text_14'}
       as={'label'}
-      className={clsx(s.label)}
+      className={clsx(s.label, disabled && s.disabled)}
       htmlFor={inputId}
     >
       {label}
@@ -135,7 +135,7 @@ export const TextField = (props: TextFieldProps) => {
 
   // Рендеринг текста ошибки
   const errorComponent = error && (
-    <Typography as={'span'} className={clsx(s.errorText)}>
+    <Typography as={'span'} variant={"error"} className={clsx(s.errorText)}>
       {error}
     </Typography>
   )
@@ -172,68 +172,61 @@ export const TextField = (props: TextFieldProps) => {
     mode = 'default',
     value,
     fullWidth,
-    margin,
+    margin = '',
     className,
     ref,
     ...rest
   } = props
 
   const containerStyle = clsx(s.container, fullWidth && s.fullWidth, className && className)
-  const marginContainer = margin ? { margin } : undefined
 
   const inputStyle = clsx(
     s.textField,
     error && s.error,
-    disabled && s.disabled,
     variant === 'horizontalBorders' && s.horizontalBorders,
     mode === 'search' && s.iconStart,
     mode === 'password' && s.iconEnd
   )
 
   return (
-    <div className={containerStyle} style={marginContainer}>
+    <div className={containerStyle} style={{margin: margin}}>
       {labelComponent}
-      
-      {/* Иконка поиска */}
-      {mode === 'search' && (
-        <div className={clsx(s.searchIcon, disabled && s.disabled)}>
-          {<Icon iconId={'search'} width={'18px'} height={'18px'} viewBox={'0 0 18 18'} />}
-        </div>
-      )}
-      
-      <input
-        ref={ref}
-        id={inputId}
-        type={mode === 'password' && !hidePassword ? 'password' : 'text'}
-        onChange={onChange}
-        value={value}
-        className={inputStyle}
-        disabled={disabled}
-        {...rest}
-      />
-      
-      {/* Кнопка показа/скрытия пароля */}
-      {mode === 'password' && (
-        <div className={clsx(s.eyeIcon, disabled && s.disabled)}>
-          <Button
-            type={'button'}
-            disabled={disabled}
-            className={clsx(s.eyeBtn)}
-            onClick={() => setHidePassword(!hidePassword)}
-            variant={'icon'}
-          >
-            {
-              <Icon
-                iconId={hidePassword ? 'eyeOffOutline' : 'eyeOutline'}
-                width={'24px'}
-                height={'24px'}
-                viewBox={'0 0 24 24'}
-              />
-            }
-          </Button>
-        </div>
-      )}
-      
+
+      <div className={s.textFieldWrapper}>
+        {/* Иконка поиска */}
+        {mode === 'search' && (
+          <div className={clsx(s.searchIcon, disabled && s.disabled, value && s.activeIcon)}>
+            {<Icon iconId={'search'} width={'20px'} height={'20px'} />}
+          </div>
+        )}
+        
+        <input
+          ref={ref}
+          id={inputId}
+          type={mode === 'password' && !hidePassword ? 'password' : 'text'}
+          onChange={onChange}
+          value={value}
+          className={inputStyle}
+          disabled={disabled}
+          {...rest}
+        />
+        
+        {/* Кнопка показа/скрытия пароля */}
+        {mode === 'password' && (
+          <div className={s.eyeIcon}>
+            <Button
+              type={'button'}
+              disabled={disabled}
+              className={clsx(s.eyeBtn)}
+              onClick={() => setHidePassword(!hidePassword)}
+              variant={'icon'}
+            >
+              { <Icon iconId={hidePassword ? 'eyeOffOutline' : 'eyeOutline'} /> }
+            </Button>
+          </div>
+        )}
+      </div>
+
       {errorComponent}
     </div>
   )

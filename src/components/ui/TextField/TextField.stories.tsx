@@ -129,6 +129,7 @@ export const HorizontalBorders: Story = {
 export const Search: Story = {
   args: {
     value: '',
+    label: undefined,
     placeholder: 'Input search',
     mode: 'search',
   },
@@ -137,8 +138,7 @@ export const Search: Story = {
 export const Password: Story = {
   args: {
     label: 'Password',
-    value: 'test123',
-    placeholder: 'Input search',
+    placeholder: 'Enter password',
     mode: 'password',
   },
 }
@@ -146,6 +146,7 @@ export const Password: Story = {
 export const Error: Story = {
   args: {
     ...Default.args,
+    value: 'test@123',
     error: 'Incorrect email',
   },
 }
