@@ -1,0 +1,1 @@
+export { SignUpDemo } from '@/components/demo/SignUpDemo/SignUpDemo';
