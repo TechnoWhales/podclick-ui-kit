@@ -39,7 +39,7 @@ export type TabType = {
 }
 
 /** Пропсы компонента Tabs */
-type TabsProps = {
+export type TabsProps = {
   /** 
    * Содержимое вкладок. Должно содержать компоненты TabContent
    * @example
