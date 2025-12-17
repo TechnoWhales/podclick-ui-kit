@@ -67,9 +67,14 @@ const meta: Meta<typeof Select> = {
         defaultValue: { summary: 'Select...' }
       }
     },
+    // value: {
+    //   control: 'select',
+    //   options: ['option1', 'option2', 'option3', ''],
+    //   description: 'Выбранная опция',
+    // },
     value: {
-      control: 'select',
-      options: ['option1', 'option2', 'option3', ''],
+      control: 'inline-radio',
+      options: ['option1', 'option2', 'option3'],
       description: 'Выбранная опция',
     },
     options: {

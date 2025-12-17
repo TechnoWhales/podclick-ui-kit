@@ -61,7 +61,7 @@ export type SelectOption = {
 /**
  * Пропсы компонента Select
  */
-type SelectProps = {
+export type SelectProps = {
   /** Выбранное значение */
   value: string
   /** Callback при изменении значения */
