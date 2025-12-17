@@ -61,13 +61,13 @@ import s from '@/components/ui/TextField/TextField.module.css'
 /* ---------------- TYPES ---------------- */
 
 /** Вариант отображения границ поля ввода */
-type InputVariant = 'fullBorders' | 'horizontalBorders'
+export type InputVariant = 'fullBorders' | 'horizontalBorders'
 
 /** Режим работы поля ввода */
-type InputMode = 'default' | 'search' | 'password'
+export type InputMode = 'default' | 'search' | 'password'
 
 /** Базовые свойства текстового поля */
-type BaseTextField = {
+export type BaseTextField = {
   /** Значение поля */
   value?: string
   /** Текст метки (label) */
@@ -85,7 +85,7 @@ type BaseTextField = {
 }
 
 /** Свойства для однострочного поля ввода (input) */
-type InputProps = BaseTextField & {
+export type InputProps = BaseTextField & {
   /** Вариант отображения границ */
   variant?: InputVariant
   /** Режим работы поля */
@@ -95,7 +95,7 @@ type InputProps = BaseTextField & {
 } & ComponentPropsWithRef<'input'>
 
 /** Свойства для многострочного поля ввода (textarea) */
-type TextAreaProps = BaseTextField & {
+export type TextAreaProps = BaseTextField & {
   /** Многострочный режим - true активирует textarea */
   multiline: true
   /** Количество видимых строк (по умолчанию 4) */
